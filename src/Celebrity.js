@@ -84,7 +84,7 @@ const Celebrity = ({
               style={{ gap: isEditable ? "20px" : "50px" }}
             >
               <div>
-                <p>Age</p>
+                <p className="mb-2">Age</p>
                 {isEditable ? (
                   <input
                     className="details-input"
@@ -102,11 +102,11 @@ const Celebrity = ({
                     }}
                   />
                 ) : (
-                  <span>{age}</span>
+                  <span className="f-500">{age}</span>
                 )}
               </div>
               <div>
-                <p>Gender</p>
+                <p className="mb-2">Gender</p>
                 {isEditable ? (
                   <select
                     className="details-input"
@@ -123,11 +123,11 @@ const Celebrity = ({
                     <option value="other">Other</option>
                   </select>
                 ) : (
-                  <span>{gender}</span>
+                  <span className="f-500">{gender}</span>
                 )}
               </div>
               <div>
-                <p>Country</p>
+                <p className="mb-2">Country</p>
                 {isEditable ? (
                   <input
                     className="details-input"
@@ -143,12 +143,12 @@ const Celebrity = ({
                     }}
                   />
                 ) : (
-                  <span>{country}</span>
+                  <span className="f-500">{country}</span>
                 )}
               </div>
             </div>
             <div>
-              <p>Description</p>
+              <p className="mb-2">Description</p>
               {isEditable ? (
                 <textarea
                   className="desc-textarea"
@@ -160,7 +160,7 @@ const Celebrity = ({
                   }}
                 />
               ) : (
-                <span>{description}</span>
+                <span className="f-500">{description}</span>
               )}
             </div>
 
@@ -224,7 +224,12 @@ const Celebrity = ({
             }}
           >
             <p>Are you sure you want to delete ?</p>
-            <span onClick={() => setDeleteFlag(false)}>X</span>
+            <span
+              style={{ cursor: "pointer" }}
+              onClick={() => setDeleteFlag(false)}
+            >
+              X
+            </span>
           </div>
           <div style={{ textAlign: "end" }}>
             <button className="btn" onClick={() => setDeleteFlag(false)}>
